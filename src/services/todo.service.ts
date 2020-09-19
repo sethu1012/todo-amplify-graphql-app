@@ -23,7 +23,8 @@ export const apiListTodos = async () => {
         }
       }`;
     const data = await API.graphql(graphqlOperation(query));
-    return { status: true, data };
+
+    return { status: true, data: data?.data?.listTodos?.items };
   } catch (e) {
     return { status: false, message: e };
   }
@@ -43,6 +44,21 @@ export const apiAddTodo = async (payload) => {
             description
             isDone
         }
+    }`;
+    const data = await API.graphql(graphqlOperation(query, payload));
+    return { status: true, data: data?.data?.createTodo };
+  } catch (e) {
+    return { status: false, message: e };
+  }
+};
+
+export const apiDeleteTodo = async (payload) => {
+  try {
+    const query = `
+    mutation Todos($id:ID!) {
+      deleteTodo(input: {id: $id}) {
+        id
+      }
     }`;
     const data = await API.graphql(graphqlOperation(query, payload));
     return { status: true, data };
