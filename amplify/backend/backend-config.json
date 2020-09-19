@@ -1,0 +1,57 @@
+{
+	"function": {
+		"todolambdalayer": {
+			"runtimes": [
+				{
+					"value": "nodejs",
+					"name": "NodeJS",
+					"layerExecutablePath": "nodejs\\node_modules",
+					"cloudTemplateValue": "nodejs12.x"
+				}
+			],
+			"layerVersionMap": {
+				"1": {
+					"permissions": [
+						{
+							"type": "awsAccounts",
+							"accounts": [
+								"692541650983"
+							]
+						},
+						{
+							"type": "private"
+						}
+					]
+				}
+			},
+			"providerPlugin": "awscloudformation",
+			"service": "LambdaLayer",
+			"build": true
+		},
+		"todotestfunction": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"todoapi": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"apiKeyExpirationDays": 7,
+							"description": "TODO Api Key"
+						}
+					},
+					"additionalAuthenticationProviders": []
+				}
+			}
+		}
+	},
+	"storage": {}
+}

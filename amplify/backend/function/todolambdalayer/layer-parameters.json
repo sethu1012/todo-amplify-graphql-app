@@ -1,0 +1,26 @@
+{
+  "runtimes": [
+    {
+      "value": "nodejs",
+      "name": "NodeJS",
+      "layerExecutablePath": "nodejs\\node_modules",
+      "cloudTemplateValue": "nodejs12.x"
+    }
+  ],
+  "layerVersionMap": {
+    "1": {
+      "permissions": [
+        {
+          "type": "awsAccounts",
+          "accounts": [
+            "692541650983"
+          ]
+        },
+        {
+          "type": "private"
+        }
+      ],
+      "hash": "WA7ifF3fry3Zgyj1nlgwepgxhvMKbuDxllQdC2DrcK0="
+    }
+  }
+}
