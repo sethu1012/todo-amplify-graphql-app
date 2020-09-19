@@ -21,9 +21,10 @@ function IndexPage() {
   };
 
   return (
-    <h1>
-      Index Page <button onClick={addTodo}>Add</button>
-    </h1>
+    <>
+      <h2 className="text-4xl">Tailwind.css added</h2>
+      <button onClick={addTodo}>Add</button>
+    </>
   );
 }
 

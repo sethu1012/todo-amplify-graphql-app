@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import Amplify from 'aws-amplify';
 import awsConfig from '../aws-exports';
+import '@styles/tailwind.css';
 
 Amplify.configure(awsConfig);
 
