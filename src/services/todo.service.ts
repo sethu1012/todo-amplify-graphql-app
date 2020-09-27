@@ -46,7 +46,7 @@ export const apiAddTodo = async (payload) => {
         }
     }`;
     const data = await API.graphql(graphqlOperation(query, payload));
-    return { status: true, data };
+    return { status: true, data: data?.data?.createTodo };
   } catch (e) {
     return { status: false, message: e };
   }

@@ -1,5 +1,6 @@
 import { apiDeleteTodo, apiListTodos } from '@services/todo.service';
 import React, { useEffect, useState } from 'react';
+import AddTodoForm from './form';
 
 function HomePageComponent() {
   const [todos, setTodos] = useState([]);
@@ -28,6 +29,7 @@ function HomePageComponent() {
   return (
     <div className="container mx-auto py-4">
       <h2 className="text-4xl">TODOs</h2>
+      <AddTodoForm />
       <div className="">
         {todos.map((todo) => (
           <div
